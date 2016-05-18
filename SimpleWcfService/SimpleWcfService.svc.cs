@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace SimpleWcfService {
+namespace SixthImpulse.SimpleWcf.SimpleWcfService {
 
 public class SimpleWcfService : ISimpleWcfService {
     
