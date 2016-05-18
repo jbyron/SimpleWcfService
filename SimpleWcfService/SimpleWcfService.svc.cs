@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace SixthImpulse.SimpleWcf.SimpleWcfService {
+namespace SimpleWcfService {
 
 public class SimpleWcfService : ISimpleWcfService {
     
@@ -17,21 +17,26 @@ public class SimpleWcfService : ISimpleWcfService {
     public TimeWithTimezone GetServerDateWithTzInfo(string timezoneName) {
         TimeWithTimezone rv = new TimeWithTimezone();
         TimeZone tz = null;
+        TimeZoneInfo tzi = null;
 
         if(string.IsNullOrWhiteSpace(timezoneName)) {
             tz = TimeZone.CurrentTimeZone;
             rv.TheTime = tz.ToLocalTime(DateTime.Now);
-            rv.TimezoneDetails = TimeZoneInfo.FindSystemTimeZoneById(tz.StandardName);
+            tzi = TimeZoneInfo.FindSystemTimeZoneById(tz.StandardName);
+            rv.TimezoneName = tzi.StandardName;
+            rv.TimezoneGmtOffset = (int)tzi.BaseUtcOffset.TotalMinutes;
         } else {
             try {
-                TimeZoneInfo tzi = TimeZoneInfo.FindSystemTimeZoneById(timezoneName);
-                
+                tzi = TimeZoneInfo.FindSystemTimeZoneById(timezoneName);
                 rv.TheTime = DateTime.UtcNow.AddMinutes(tzi.GetUtcOffset(DateTime.UtcNow).TotalMinutes);
-                rv.TimezoneDetails = tzi;
+                rv.TimezoneName = tzi.StandardName;
+                rv.TimezoneGmtOffset = (int)tzi.BaseUtcOffset.TotalMinutes;
             } catch (TimeZoneNotFoundException) {
                 tz = TimeZone.CurrentTimeZone;
                 rv.TheTime = tz.ToLocalTime(DateTime.Now);
-                rv.TimezoneDetails = TimeZoneInfo.FindSystemTimeZoneById(tz.StandardName);
+                tzi = TimeZoneInfo.FindSystemTimeZoneById(tz.StandardName);
+                rv.TimezoneName = tzi.StandardName;
+                rv.TimezoneGmtOffset = (int)tzi.BaseUtcOffset.TotalMinutes;
             }
         } // if
 

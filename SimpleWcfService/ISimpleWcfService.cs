@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace SixthImpulse.SimpleWcf.SimpleWcfService {
+namespace SimpleWcfService {
     
 [ServiceContract]
 public interface ISimpleWcfService {
@@ -37,7 +37,8 @@ public interface ISimpleWcfService {
 [DataContract]
 public class TimeWithTimezone {
     DateTime m_time;
-    TimeZoneInfo m_tzi;
+    string m_tziName;
+    int m_tziGmtOffset;
 
     [DataMember]
     public DateTime TheTime {
@@ -46,9 +47,16 @@ public class TimeWithTimezone {
     }
 
     [DataMember]
-    public TimeZoneInfo TimezoneDetails {
-        get { return m_tzi; }
-        set { m_tzi = value; }
+    public string TimezoneName {
+        get { return m_tziName; }
+        set { m_tziName = value; }
     }
+
+    [DataMember]
+    public int TimezoneGmtOffset {
+        get { return m_tziGmtOffset; }
+        set { m_tziGmtOffset = value; }
+    }
+
 }
 }
