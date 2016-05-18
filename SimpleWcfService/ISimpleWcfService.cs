@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace SimpleWcfService {
+namespace SixthImpulse.SimpleWcf.SimpleWcfService {
     
 [ServiceContract]
 public interface ISimpleWcfService {
@@ -14,8 +14,11 @@ public interface ISimpleWcfService {
     /// <summary>
     /// Return the current time on the server, expressed in the specified timezone
     /// </summary>
-    /// <param name="timezoneName">The timezone ID you want to retrieve.  Leave blank to use server's timezone.  List of IDs can be found here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones </param>
+    /// <param name="timezoneName">The timezone ID you want to retrieve.  Leave blank to use server's timezone.</param>
     /// <returns></returns>
+    /// <remarks>The timezone IDs are the full names.  An unofficial list can be found here: http://stackoverflow.com/questions/7908343/list-of-timezone-ids-for-use-with-findtimezonebyid-in-c
+    /// List of IDs can be found here: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+    /// </remarks>
     [OperationContract]
     DateTime GetServerDate(string timezoneName);
 
