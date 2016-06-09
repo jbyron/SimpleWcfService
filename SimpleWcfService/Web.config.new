@@ -1,0 +1,86 @@
+﻿<?xml version="1.0"?>
+<configuration>
+
+  <appSettings>
+    <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
+  </appSettings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5.2" />
+    <httpRuntime targetFramework="4.5.2"/>
+  </system.web>
+  
+  
+  
+  
+  <!--
+  <system.serviceModel>
+    <behaviors>
+      <serviceBehaviors>
+        <behavior>
+          <! - - To avoid disclosing metadata information, set the values below to false before deployment - - >
+          <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true"/>
+          <! - - To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information - - >
+          <serviceDebug includeExceptionDetailInFaults="false"/>
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <protocolMapping>
+        <add scheme="https"   binding="basicHttpsBinding"/>
+        <! - - <add scheme="net.tcp" binding="netTcpBinding"/> - - >
+    </protocolMapping>    
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
+  </system.serviceModel>
+-->  
+  
+<system.serviceModel>
+    <services>
+        <service name="SixthImpulse.SimpleWcf.SimpleWcfService.SimpleWcfService" behaviorConfiguration="mexBehavior">
+            <host>
+                <baseAddresses>
+                    <add baseAddress="net.tcp://localhost:8125/SimpleWcfService"/>
+                    <add baseAddress="http://localhost:8123/SimpleWcfService"/>
+                </baseAddresses>
+            </host>
+            <endpoint address="" binding="netTcpBinding" contract="SixthImpulse.SimpleWcf.SimpleWcfService.ISimpleWcfService"/> 
+            <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange"/>
+        </service>
+    </services>
+    <behaviors>
+        <serviceBehaviors>
+            <behavior name="mexBehavior">
+                <serviceMetadata httpGetEnabled="true"/>
+                <serviceDebug includeExceptionDetailInFaults="false"/>
+            </behavior>
+        </serviceBehaviors>
+    </behaviors>
+    <serviceHostingEnvironment multipleSiteBindingsEnabled="true" />
+</system.serviceModel>  
+  
+  
+  
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true"/>
+    <!--
+        To browse web app root directory during debugging, set the value below to true.
+        Set to false before deployment to avoid disclosing web app folder information.
+      -->
+    <directoryBrowse enabled="true"/>
+  </system.webServer>
+
+<!--
+  <system.diagnostics>
+    <sources>
+      <source name="System.ServiceModel"
+              switchValue="Information, ActivityTracing"
+              propagateActivity="true">
+        <listeners>
+          <add name="traceListener"
+               type="System.Diagnostics.XmlWriterTraceListener"
+               initializeData="C:\Work\SixthImpulse\Repos\SimpleWcfService\SimpleWcfService\bin\Traces.svclog"  />
+        </listeners>
+      </source>
+    </sources>
+  </system.diagnostics>
+-->
+
+</configuration>

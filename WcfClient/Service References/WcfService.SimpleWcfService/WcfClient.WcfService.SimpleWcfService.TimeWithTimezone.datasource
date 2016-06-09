@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="TimeWithTimezone" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>WcfClient.SixthImpulse.SimpleWcf.WcfService.TimeWithTimezone, Service References.SixthImpulse.SimpleWcf.WcfService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
+   <TypeInfo>WcfClient.WcfService.SimpleWcfService.TimeWithTimezone, Service References.WcfService.SimpleWcfService.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

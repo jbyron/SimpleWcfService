@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfClient.SixthImpulse.SimpleWcf.WcfService {
+namespace WcfClient.WcfService.SimpleWcfService {
     using System.Runtime.Serialization;
     using System;
     
@@ -91,7 +91,7 @@ namespace WcfClient.SixthImpulse.SimpleWcf.WcfService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SixthImpulse.SimpleWcf.WcfService.ISimpleWcfService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WcfService.SimpleWcfService.ISimpleWcfService")]
     public interface ISimpleWcfService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleWcfService/GetServerDate", ReplyAction="http://tempuri.org/ISimpleWcfService/GetServerDateResponse")]
@@ -101,19 +101,19 @@ namespace WcfClient.SixthImpulse.SimpleWcf.WcfService {
         System.Threading.Tasks.Task<System.DateTime> GetServerDateAsync(string timezoneName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleWcfService/GetServerDateWithTzInfo", ReplyAction="http://tempuri.org/ISimpleWcfService/GetServerDateWithTzInfoResponse")]
-        WcfClient.SixthImpulse.SimpleWcf.WcfService.TimeWithTimezone GetServerDateWithTzInfo(string timezoneName);
+        WcfClient.WcfService.SimpleWcfService.TimeWithTimezone GetServerDateWithTzInfo(string timezoneName);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISimpleWcfService/GetServerDateWithTzInfo", ReplyAction="http://tempuri.org/ISimpleWcfService/GetServerDateWithTzInfoResponse")]
-        System.Threading.Tasks.Task<WcfClient.SixthImpulse.SimpleWcf.WcfService.TimeWithTimezone> GetServerDateWithTzInfoAsync(string timezoneName);
+        System.Threading.Tasks.Task<WcfClient.WcfService.SimpleWcfService.TimeWithTimezone> GetServerDateWithTzInfoAsync(string timezoneName);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISimpleWcfServiceChannel : WcfClient.SixthImpulse.SimpleWcf.WcfService.ISimpleWcfService, System.ServiceModel.IClientChannel {
+    public interface ISimpleWcfServiceChannel : WcfClient.WcfService.SimpleWcfService.ISimpleWcfService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SimpleWcfServiceClient : System.ServiceModel.ClientBase<WcfClient.SixthImpulse.SimpleWcf.WcfService.ISimpleWcfService>, WcfClient.SixthImpulse.SimpleWcf.WcfService.ISimpleWcfService {
+    public partial class SimpleWcfServiceClient : System.ServiceModel.ClientBase<WcfClient.WcfService.SimpleWcfService.ISimpleWcfService>, WcfClient.WcfService.SimpleWcfService.ISimpleWcfService {
         
         public SimpleWcfServiceClient() {
         }
@@ -142,11 +142,11 @@ namespace WcfClient.SixthImpulse.SimpleWcf.WcfService {
             return base.Channel.GetServerDateAsync(timezoneName);
         }
         
-        public WcfClient.SixthImpulse.SimpleWcf.WcfService.TimeWithTimezone GetServerDateWithTzInfo(string timezoneName) {
+        public WcfClient.WcfService.SimpleWcfService.TimeWithTimezone GetServerDateWithTzInfo(string timezoneName) {
             return base.Channel.GetServerDateWithTzInfo(timezoneName);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.SixthImpulse.SimpleWcf.WcfService.TimeWithTimezone> GetServerDateWithTzInfoAsync(string timezoneName) {
+        public System.Threading.Tasks.Task<WcfClient.WcfService.SimpleWcfService.TimeWithTimezone> GetServerDateWithTzInfoAsync(string timezoneName) {
             return base.Channel.GetServerDateWithTzInfoAsync(timezoneName);
         }
     }

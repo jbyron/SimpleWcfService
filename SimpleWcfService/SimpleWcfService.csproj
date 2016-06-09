@@ -16,7 +16,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -62,7 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SimpleWcfService.svc" />
-    <Content Include="Web.config" />
+    <None Include="Web.config.simple" />
+    <None Include="Web.config.Debug.simple">
+      <DependentUpon>Web.config.simple</DependentUpon>
+    </None>
+    <None Include="Web.config.Release.simple">
+      <DependentUpon>Web.config.simple</DependentUpon>
+    </None>
+    <None Include="Web.config.new">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SimpleWcfService.svc.cs">
@@ -75,11 +84,18 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.config.Debug.new">
+      <DependentUpon>Web.config.new</DependentUpon>
+    </None>
+    <None Include="Web.config.Release.new">
+      <DependentUpon>Web.config.new</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
@@ -97,7 +113,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>4532</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:4532/</IISUrl>
+          <IISUrl>http://localhost:8123/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -11,30 +11,9 @@
   
   
   <system.serviceModel>
-
-    <services>
-      <service name="SixthImpulse.SimpleWcf.SimpleWcfService.SimpleWcfService" behaviorConfiguration="SimpleWcfServiceBehavior">
-        <host>
-          <baseAddresses>
-              <add baseAddress="net.tcp://localhost:8125/" />
-          </baseAddresses>
-        </host>
-        <endpoint address=""    binding="netTcpBinding" bindingConfiguration="tcpBinding" contract="SixthImpulse.SimpleWcf.SimpleWcfService.ISimpleWcfService"></endpoint>
-        <endpoint address="mex" binding="mexTcpBinding" bindingConfiguration="" contract="IMetadataExchange"></endpoint>
-      </service>
-    </services>
-
-    <bindings>
-      <netTcpBinding>
-        <binding name="tcpBinding" portSharingEnabled="true">
-          <security mode="None"></security>
-        </binding>
-      </netTcpBinding>
-    </bindings>
-
     <behaviors>
       <serviceBehaviors>
-        <behavior name="SimpleWcfServiceBehavior">
+        <behavior>
           <!-- To avoid disclosing metadata information, set the values below to false before deployment -->
           <serviceMetadata httpGetEnabled="true" httpsGetEnabled="true" />
           <!-- To receive exception details in faults for debugging purposes, set the value below to true.  Set to false before deployment to avoid disclosing exception information -->
@@ -46,9 +25,7 @@
         <add scheme="https"   binding="basicHttpsBinding"/>
         <add scheme="net.tcp" binding="netTcpBinding"/>
     </protocolMapping>    
-    <!--
     <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true" />
-    -->
   </system.serviceModel>
   
   

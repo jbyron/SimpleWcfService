@@ -47,7 +47,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\SixthImpulse.SimpleWcf.WcfService\Reference.cs">
+    <Compile Include="Service References\WcfService.SimpleWcfService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -55,17 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\SimpleWcfService.wsdl" />
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\SimpleWcfService.xsd">
+    <None Include="Service References\WcfService.SimpleWcfService\service.wsdl" />
+    <None Include="Service References\WcfService.SimpleWcfService\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\SimpleWcfService2.xsd">
+    <None Include="Service References\WcfService.SimpleWcfService\service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\SimpleWcfService3.xsd">
+    <None Include="Service References\WcfService.SimpleWcfService\SixthImpulse.SimpleWcf.SimpleWcfService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\WcfClient.SixthImpulse.SimpleWcf.WcfService.TimeWithTimezone.datasource">
+    <None Include="Service References\WcfService.SimpleWcfService\WcfClient.WcfService.SimpleWcfService.TimeWithTimezone.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
@@ -73,19 +73,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\SixthImpulse.SimpleWcf.WcfService\" />
+    <WCFMetadataStorage Include="Service References\WcfService.SimpleWcfService\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\SimpleWcfService.disco" />
+    <None Include="Service References\WcfService.SimpleWcfService\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\configuration91.svcinfo" />
+    <None Include="Service References\WcfService.SimpleWcfService\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\SixthImpulse.SimpleWcf.WcfService\Reference.svcmap">
+    <None Include="Service References\WcfService.SimpleWcfService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
